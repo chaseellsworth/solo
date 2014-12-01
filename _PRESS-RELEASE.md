@@ -17,24 +17,26 @@ Once the project moves into development, the press release can be used as a touc
  -->
  
 ## Travel Filter ##
+> For finding places to travel
 
-## Travel Filter is for travelers who want help or inspiration from the collective experiences of friends to decide where to travel, or to learn more about a destination already in mind.##
+## Description##
+> Travel Filter is for travelers who want help or inspiration from the collective experiences of friends to decide where to travel, or to learn more about a destination already in mind.
 
-##Users upload travel photos and name the locations (continent, country, city/location) so that friends can search areas they are thinking of visiting and see who has been there and what it was like for them, which gives much more context / insight than what is seen on travel sites. The users can send messages to those friends asking about trips or locations##
+## Summary##
+> Travelers want inspiration on where to go based on people like them (e.g., their friends), or they have a place in mind and want to know which friends have been there/ what they did so they can get input
 
-## Travelers want inspiration on where to go based on people like them (e.g., their friends), or they have a place in mind and want to know which friends have been there/ what they did so they can get input##
+> Users upload travel photos and name the locations (continent, country, city/location) so that friends can search areas they are thinking of visiting and see who has been there and what it was like for them, which gives much more context / insight than what is seen on travel sites. The users can send messages to those friends asking about trips or locations
 
-## You can type in a place and see all the pics from your friends taken in that location or look at a specific person to see their trips (e.g., see all the pictures your friends have taken in Thailand ##
+> You can type in a place and see all the pics from your friends taken in that location or look at a specific person to see their trips (e.g., see all the pictures your friends have taken in Thailand).
 
-## "This thing is really cool. Well, kind of cool. Well, it's really just okay. I've seen worse.##
+> You just sign up, import friends from Facebook or Twitter and start uploading pics from your computer
 
-##You just sign up, import friends from Facebook or Twitter and start uploading pics from your computer##
+##Testimonials##
+> "I was about to stop travelling for good before I learned about Travel Filter. Now I travel occasionally." 
+	- unkown traveler / actually the author
 
-## "I was about to stop travelling for good before I learned about Travel Filter. Now I travel occasionally." 
-	- unkown traveler / Travel Filter employee
- ##
-
-##Go to the website, sign up, and start##
+##Next Steps##
+> Go to the website, sign up, and start
 
 <!-- getting from api's -->
 <!-- uploading pics -->

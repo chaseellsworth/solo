@@ -1,0 +1,25 @@
+- Root
+	-Client
+		-App
+		-Assets
+		-Styles
+		+index.html
+	-Server
+		-Config
+		+server.js
++bower.json
+index.js
+packag.json
+
+-Wire up the app (excluding database);
+	-Folder Architecture
+	-Wiring
+		-Complete package.json
+		-Complete bower.json
+		-NPM Install -g nodemon
+		-NPM Install
+		-NPM Install Bower
+		-NPM FS
+	-Wire up the app (excluding database);
+	 	-App.js and basic routing
+	 	-server.js
