@@ -1,4 +1,4 @@
-# Project Name #
+# Travel Filter #
 
 <!-- 
 > This material was originally posted [here](http://www.quora.com/What-is-Amazons-approach-to-product-development-and-product-management). It is reproduced here for posterities sake.
@@ -16,29 +16,26 @@ Oh, and I also like to write press-releases in what I call "Oprah-speak" for mai
 Once the project moves into development, the press release can be used as a touchstone; a guiding light. The product team can ask themselves, "Are we building what is in the press release?" If they find they're spending time building things that aren't in the press release (overbuilding), they need to ask themselves why. This keeps product development focused on achieving the customer benefits and not building extraneous stuff that takes longer to build, takes resources to maintain, and doesn't provide real customer benefit (at least not enough to warrant inclusion in the press release).
  -->
  
-## Heading ##
-  > Name the product in a way the reader (i.e. your target customers) will understand.
+## Travel Filter ##
 
-## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+## Travel Filter is for travelers who want help or inspiration from the collective experiences of friends to decide where to travel, or to learn more about a destination already in mind.##
 
-## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+##Users upload travel photos and name the locations (continent, country, city/location) so that friends can search areas they are thinking of visiting and see who has been there and what it was like for them, which gives much more context / insight than what is seen on travel sites. The users can send messages to those friends asking about trips or locations##
 
-## Problem ##
-  > Describe the problem your product solves.
+## Travelers want inspiration on where to go based on people like them (e.g., their friends), or they have a place in mind and want to know which friends have been there/ what they did so they can get input##
 
-## Solution ##
-  > Describe how your product elegantly solves the problem.
+## You can type in a place and see all the pics from your friends taken in that location or look at a specific person to see their trips (e.g., see all the pictures your friends have taken in Thailand ##
 
-## Quote from You ##
-  > A quote from a spokesperson in your company.
+## "This thing is really cool. Well, kind of cool. Well, it's really just okay. I've seen worse.##
 
-## How to Get Started ##
-  > Describe how easy it is to get started.
+##You just sign up, import friends from Facebook or Twitter and start uploading pics from your computer##
 
-## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+## "I was about to stop travelling for good before I learned about Travel Filter. Now I travel occasionally." 
+	- unkown traveler / Travel Filter employee
+ ##
 
-## Closing and Call to Action ##
-  > Wrap it up and give pointers where the reader should go next.
+##Go to the website, sign up, and start##
+
+<!-- getting from api's -->
+<!-- uploading pics -->
+<!-- filtering based on location database -->
