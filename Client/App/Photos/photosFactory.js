@@ -1,44 +1,40 @@
 angular.module('TravelFilter.photosFactory', [])
 
 
-.factory('Photos', function($http){
-	
-	var paths = {
-	  'siteAssets' : path.join(__dirname, '../web/public'),
-	  'archivedSites' : path.join(__dirname, '../archives/sites'),
-	  'list' : path.join(__dirname, '../archives/sites.txt')
+.factory('Photos', function ($http, $base64){
+
+	var addPhoto = function(location, activity, description, image){
+		
+		var encoded = $base64.encode(image);
+		
+		var postData = {
+			location: location,
+			activity: activity,
+			description: description,
+			image: encoded
+		}
+
+		console.log(postData);
+		
+		return $http({
+      		method: 'POST',
+      		url: '/api/photos/addPhoto',
+      		data: postData
+    	})
+    	.then(function (resp) {
+      		return resp.data.token;
+    	});
+
+	}
+
+	// var getPhoto = function(image){
+
+	// }
+
+	return {
+		addPhoto: addPhoto
+		// getPhoto: getPhoto
 	};
 
-	var addPhoto = function(){
-		
+});
 
-	var getPhoto = function(){
-
-	//FOR WHEN I ADD DATABASE
-	// var addPhoto = function(){
-	// 	return $http({
-	// 		method: 'POST',
-	// 		url: ?????
-	// 	})
-	// 	.then(function(results){
-	// 		return results.data;
-	// 	})
-	// 	.catch(function(error){
-	// 		console.log(error);
-	// 	})
-	// };
-
-	// var getPhoto = function(){
-
-	// 	return $http({
-	// 		method: 'GET',
-	// 		url: ?????
-	// 	})
-	// 	.then(function(results){
-	// 		return results.data;
-	// 	})
-	// 	.catch(function(error){
-	// 		console.log(error);
-	// 	})
-	// };
-})

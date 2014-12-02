@@ -1,17 +1,19 @@
 
-<div>
-	hello {{user.displayName}}
+<!-- Do i need to add the controller or not? -->
+<div ng-controller='PhotosController'> 
+	
+	hello {{chase}}
 	
 	<!-- toggles form for uploading images -->
 	<button ng-click="showPostForm = !showPostForm">Add Post</button>
 
-	<form ng-show="showPostForm" ng-submit="savePost(images)"> <!-- SOME FUNCTION -->
+	<form ng-show="showPostForm" ng-submit="addPhoto()"> 
 		
 		<input placeholder="Location" ng-model="post.location" class="form-control" required/>
 		
 		<input placeholder="Activity" ng-model="post.activity" class="form-control" required/>
 		
-		<textarea placeholder="Describe your experience" ng-model="post.content" class="form-control" rows="10"></textarea>
+		<textarea placeholder="Describe your experience" ng-model="post.description" class="form-control" rows="10"></textarea>
 		
 		<!-- pulls up options to upload -->
 		
@@ -19,6 +21,7 @@
 		
 		<!-- Originals <img ng-repeat="img in images" ng-src="{{img.url}}" type="{{img.file.type}}" /> -->
 			Resized <img ng-repeat="img in images" ng-src="{{img.resized.dataURL}}"/>
+		
 		<button type="submit">Save Post</button>
 	</form>
 

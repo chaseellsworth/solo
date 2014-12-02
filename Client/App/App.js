@@ -3,6 +3,7 @@ angular.module('TravelFilter', [
 'base64',
 'TravelFilter.auth', 
 'TravelFilter.photos',
+'TravelFilter.photosFactory'
 ]) ////ADD IN CONTROLLER WHEN FINISHED
 
 .config(function($stateProvider, $urlRouterProvider,$httpProvider){    //, loadingProvider
