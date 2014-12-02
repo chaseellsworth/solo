@@ -6,17 +6,28 @@ var Q = require('q');
 // var Q = require('q');
 // var util    = require('../config/utils.js');
 
-module.exports = {
+  var storagePath: {
+    
+    'archivedPhotos' : path.join(__dirname, '../archives/userPhotos'),
+    
+  }
+
+var actions = {
 
   //ADD THE PATHS TO STORE THE STUFF AND GET THE STUFF
-  path: {
-    'siteAssets' : path.join(__dirname, '../web/public'),
-    'archivedSites' : path.join(__dirname, '../archives/sites'),
-    'list' : path.join(__dirname, '../archives/sites.txt')
-  },
 
   //ADD FS WRITEFILE FUNCTION TO CREATE NEW FS FILE WITH POST SAVED AS OBJECT OR APPEND EXISTING FILE
-  addPhoto: function(){
+  addPhoto: function(req, res, next){
+    
+    fs.appendFile(storagePath.archivedPhotos, req.body, function(error){
+      if (error) {
+        throw  error;
+      }else{
+        console.log("the image was saved!")
+      }
+    })
+    .then()
+    .catch()
 
   },
 
