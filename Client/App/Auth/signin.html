@@ -1,1 +1,12 @@
-<div>SIGN IN!!</div>
+<div id='signin'>
+  <h1>signin</h1>
+  <form name="signinForm" ng-submit='signin()'>
+
+    <input name='userName' type='text' ng-model='user.username' placeholder='enter username' ng-minlength='8' ng-maxlength='15'>
+
+    <input name='passWord' type="password" ng-model='user.password' placeholder='enter password' ng-minlength='8' ng-maxlength='15'>
+
+    <button>signin</button>
+  </form>
+  <a href="#/signin">Already have an account? <strong>Signin</strong> ...</a>
+</div>

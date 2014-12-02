@@ -1,3 +1,3 @@
-angular.module('travel-filter.authFactory', [])
+angular.module('TravelFilter.authFactory', [])
 
 .factory()

@@ -1,4 +1,4 @@
-angular.module('travel-filter.photosCtrl', [])
+angular.module('TravelFilter.photos', [])
 
 .controller('PhotosController', function(){
 	

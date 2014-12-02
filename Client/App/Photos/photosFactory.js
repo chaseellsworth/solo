@@ -1,3 +1,3 @@
-angular.module('travel-filter.photosFactory', [])
+angular.module('TravelFilter.photosFactory', [])
 
 .factory()
