@@ -27,13 +27,24 @@ angular.module('TravelFilter.photosFactory', [])
 
 	}
 
-	// var getPhoto = function(image){
+	var getPhotos = function(location, activity, description, image){
+		
+		return $http({
+      		method: 'GET',
+      		url: '/api/links'
+    	})
+      	.then(function(results) {
+        	return results.data;
+      	})
+      	.catch(function(error) {
+        	console.log(error);
+      	});
 
-	// }
+	}
 
 	return {
 		addPhoto: addPhoto
-		// getPhoto: getPhoto
+		getPhoto: getPhotos
 	};
 
 });

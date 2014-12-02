@@ -3,19 +3,22 @@ angular.module('TravelFilter.photos', [])
 .controller('PhotosController', function ($base64, $scope, $location, Photos, $http){
 	
 	//GET PHOTOS
-	// $scope.data = {};
-	// Photos.getPhotos().then(function(results){
-	// 	$scope.data.images = results;
-	// });
+	$scope.data = {};
+	
+	$scope.getPhotos = function(){
+	
+		Photos.getPhotos();
+	
+	};
 
 	//ADD PHOTOS
 	$scope.post = {};
-	console.log('1');
+	
 	$scope.addPhoto = function(){
-	console.log('2');
+	
 		Photos.addPhoto($scope.post.location, $scope.post.activity, $scope.post.description, $scope.post.imageData );
-	console.log('3');
-		};
+	
+	};
 
 });
 
