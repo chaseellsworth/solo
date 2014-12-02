@@ -1,5 +1,6 @@
 angular.module('TravelFilter', [
 'ui.router',
+'base64',
 'TravelFilter.auth', 
 'TravelFilter.photos',
 ]) ////ADD IN CONTROLLER WHEN FINISHED

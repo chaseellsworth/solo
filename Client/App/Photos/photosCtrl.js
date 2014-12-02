@@ -1,6 +1,6 @@
 angular.module('TravelFilter.photos', [])
 
-.controller('PhotosController', function ($scope, $location, Photos, $http){
+.controller('PhotosController', function ($base64, $scope, $location, Photos, $http){
 	$scope.data = {};
 	Photos.getPhotos().then(function(results){
 		$scope.data.images = results;
@@ -13,3 +13,7 @@ angular.module('TravelFilter.photos', [])
 		});
 	};
 });
+
+//using base64
+$scope.encoded = $base64.encode(???);
+$scope.decoded = $base64.decode(???);
