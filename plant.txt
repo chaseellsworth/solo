@@ -11,6 +11,15 @@
 index.js
 packag.json
 
+-Key features in order of importance
+	- upload photos
+	- filter photos by geography
+	- implement database (SQL)
+	- implement passport
+	- implement facebook sign in
+	- pretty up w Bootstrap
+
+
 -Wire up the app (excluding database);
 	-Folder Architecture
 	-Wiring
@@ -20,6 +29,11 @@ packag.json
 		-NPM Install
 		-NPM Install Bower
 		-NPM FS
-	-Wire up the app (excluding database);
+	-Wire up the app (excluding database) by making basic angular / express / fs functionality;
 	 	-App.js and basic routing
 	 	-server.js
+	 	-FS write files
+ 	-Create the Server logic
+ 	-Make sure things are getting from the DOM to the FS files
+ 	-Make sure things are getting from the FS files to the DOM
+ 	-Build out the Angular
