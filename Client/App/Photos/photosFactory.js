@@ -18,7 +18,7 @@ angular.module('TravelFilter.photosFactory', [])
 		
 		return $http({
       		method: 'POST',
-      		url: '/api/photos/addPhoto',
+      		url: '/api/photos',
       		data: postData
     	})
     	.then(function (resp) {

@@ -6,31 +6,32 @@ var Q = require('q');
 // var Q = require('q');
 // var util    = require('../config/utils.js');
 
-  var storagePath: {
-    
-    'archivedPhotos' : path.join(__dirname, '../archives/userPhotos'),
-    
-  }
-
-var actions = {
+  
+module.exports = {
 
   //ADD THE PATHS TO STORE THE STUFF AND GET THE STUFF
 
   //ADD FS WRITEFILE FUNCTION TO CREATE NEW FS FILE WITH POST SAVED AS OBJECT OR APPEND EXISTING FILE
   addPhoto: function(req, res, next){
     
-    fs.appendFile(storagePath.archivedPhotos, req.body, function(error){
+    photoModel.create(req.body, function(error, data){
       if (error) {
-        throw  error;
+        res.send(500);
       }else{
-        console.log("the image was saved!")
+        res.send(data);
       }
     })
-    .then()
-    .catch()
-
   },
 
-  //ADD ABILITY TO READ AND RETURN DATA FROM FS FILES
+  getPhotos: function(req, res, next){
+    photoModel.find( function(error, data){
+      if (error) {
+        res.send(500);
+      }else{
+        res.send(data);
+      }
+    })
+  }
 
 };
+  
