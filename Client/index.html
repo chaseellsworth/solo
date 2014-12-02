@@ -8,22 +8,24 @@
   </head>
 
   <body ng-app='TravelFilter'>
-
   	<div>
   		<input type="text" ng-model="aPlace" placeholder="Search locations">
   	</div>
-    <!-- the ng-view directive is where our templates will be loaded into when naviagted to -->
-    <div ng-view></div>
+    <!-- the ng-view -->
+    <div ui-view></div>
 
+    <!-- Angular -->
     <script src="lib/angular/angular.js"></script>
     <script src="lib/angular-mocks/angular-mocks.js"></script>
     <script src="lib/angular-ui-router/release/angular-ui-router.js"></script>
+    <!-- Controllers / Factories -->
     <script src="app/auth/authCtrl.js"></script>
     <script src="app/auth/authFactory.js"></script>
     <script src="app/photos/photosCtrl.js"></script>
     <script src="app/photos/photosFactory.js"></script>
+    <!-- App -->
     <script src="app/app.js"></script>  
-    <!-- // <script src="lib/lodash/dist/lodash.js"></script> -->
+    <script src="lib/lodash/dist/lodash.js"></script>
   
   </body>
 </html>

@@ -29,7 +29,7 @@ angular.module('TravelFilter', [
     
     .state('signup', {
 			url: '/signup',
-      templateUrl: 'app/auth/signin.html',
+      templateUrl: 'app/auth/signup.html',
 			// controller: controller: function($scope){
     //      $scope.items = [];
     //    }
@@ -37,7 +37,7 @@ angular.module('TravelFilter', [
 		
     .state('photos', {
       url: '/photos',
-			templateUrl: 'app/auth/signup.html',
+			templateUrl: 'app/photos/photos.html',
 			// controller:  controller: function($scope){
     //      $scope.items = [];
     //    }
