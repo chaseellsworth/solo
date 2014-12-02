@@ -1,1 +1,33 @@
-photos.html
+
+
+<div>
+	hello {{user.displayName}}
+	<button ng-click="showPostForm = !showPostForm">Add Post</button>
+
+	<form ng-show="showPostForm" ng-submit="savePost(images)">
+		<input placeholder="Location" ng-model="post.location" class="form-control"/>
+		<input placeholder="Activity" ng-model="post.activity" class="form-control"/>
+		<textarea placeholder="Describe your experience" ng-model="post.content" class="form-control" rows="10"></textarea>
+		<!-- pulls up options to upload -->
+		<input type="file" accept="image/*" multiple  image="images" resize-max-height="1000" resize-max-width="250" resize-quality="1" />
+		<!-- Originals <img ng-repeat="img in images" ng-src="{{img.url}}" type="{{img.file.type}}" /> -->
+			Resized <img ng-repeat="img in images" ng-src="{{img.resized.dataURL}}"/>
+		<button type="submit">Save Post</button>
+	</form>
+
+
+</div>
+
+<div ng-repeat="post in posts">
+	{{post.author}} - {{post.location}}
+	<br/> 
+	{{post.activity}}
+	<img ng-src="{{post.images[0]}}" class="post-image">
+	<img ng-src="{{post.images[1]}}" class="post-image">
+	<img ng-src="{{post.images[2]}}" class="post-image">
+	<img ng-src="{{post.images[3]}}" class="post-image">
+</div>
+
+
+
+

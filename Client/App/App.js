@@ -12,24 +12,28 @@ Angular.Module('travel-filter', []) ////ADD IN CONTROLLER WHEN FINISHED
         	}
 		})
 	$routeProvider
-		.when('/signin', {
-			templateUrl: 'App/Auth/signin.html',
+		.when('/', {
+      templateUrl: 'app/auth/signin.html',
+      controller: 'AuthController'
+    })
+    .when('/signin', {
+			templateUrl: 'app/auth/signin.html',
 			controller: 'AuthController'
 		})
 		.when('/signup', {
-			templateUrl: 'App/Auth/signup.html',
+			templateUrl: 'app/auth/signup.html',
 			controller:  'AuthController'
 		})
 		.when('/photos', {
-			templateUrl: 'App/Photos/photos.html',
+			templateUrl: 'app/photos/photos.html',
 			controller:  'PhotosController'
 		})
 		.when('/upload', {
-			templateUrl: 'App/Upload/upload.html',
+			templateUrl: 'app/upload/upload.html',
 			controller:  'UploadController'
 		})
 		.otherwise('/signin', {
-			templateUrl: 'App/Photos/photos.html',
+			templateUrl: 'app/photos/photos.html',
 			controller:  'PhotosController'
 		})
 
