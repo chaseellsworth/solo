@@ -1,86 +1,28 @@
-var Photo = require('./linkModel.js');
-var Q = require('q');
-var util    = require('../config/utils.js');
-
+var path = require('path');
+var fs = require('fs');
+// var Photo = require('./linkModel.js');
+// var Q = require('q');
+// var util    = require('../config/utils.js');
 
 module.exports = {
-  findUrl: function (req, res, next, code) {
-    var findLink = Q.nbind(Link.findOne, Link);
-    findLink({code: code})
-      .then(function (link) {
-        if (link) {
-          req.navLink = link;
-          next();
-        } else {
-          next(new Error('Link not added yet'));
-        }
-      })
-      .fail(function (error) {
-        next(error);
-      });
+
+  //ADD THE PATHS TO STORE THE STUFF AND GET THE STUFF
+  path: {
+    'siteAssets' : path.join(__dirname, '../web/public'),
+    'archivedSites' : path.join(__dirname, '../archives/sites'),
+    'list' : path.join(__dirname, '../archives/sites.txt')
   },
 
-  allLinks: function (req, res, next) {
-  var findAll = Q.nbind(Link.find, Link);
+  //ADD FUNCTIONALITY TO CONVERT IMAGE TO DATA
+  convertImage: function(){
 
-  findAll({})
-    .then(function (links) {
-      res.json(links);
-    })
-    .fail(function (error) {
-      next(error);
-    });
   },
 
-  newLink: function (req, res, next) {
-    var url = req.body.url;
-    console.log(req.body);
-    if (!util.isValidUrl(url)) {
-      return next(new Error('Not a valid url'));
-    }
+  //ADD FS WRITEFILE FUNCTION TO CREATE NEW FS FILE WITH POST SAVED AS OBJECT OR APPEND EXISTING FILE
+  addPhoto: function(){
 
-    var createLink = Q.nbind(Link.create, Link);
-    var findLink = Q.nbind(Link.findOne, Link);
-
-    findLink({url: url})
-      .then(function (match) {
-        if (match) {
-          res.send(match);
-        } else {
-          return  util.getUrlTitle(url);
-        }
-      })
-      .then(function (title) {
-        if (title) {
-          var newLink = {
-            url: url,
-            visits: 0,
-            base_url: req.headers.origin,
-            title: title
-          };
-          return createLink(newLink);
-        }
-      })
-      .then(function (createdLink) {
-        if (createdLink) {
-          res.json(createdLink);
-        }
-      })
-      .fail(function (error) {
-        next(error);
-      });
   },
 
-  navToLink: function (req, res, next) {
-    var link = req.navLink;
-    link.visits++;
-    link.save(function (err, savedLink) {
-      if (err) {
-        next(err);
-      } else {
-        res.redirect(savedLink.url);
-      }
-    });
-  }
+  //ADD ABILITY TO READ AND RETURN DATA FROM FS FILES
 
 };
