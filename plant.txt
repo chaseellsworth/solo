@@ -1,24 +1,12 @@
-- Root
-	-Client
-		-App
-		-Assets
-		-Styles
-		+index.html
-	-Server
-		-Config
-		+server.js
-+bower.json
-index.js
-packag.json
 
 -Key features in order of importance
-	- upload photos
+	- upload photos - KEY FEATURE
 	- filter photos by geography
+	
 	- implement database (SQL)
 	- implement passport
 	- implement facebook sign in
 	- pretty up w Bootstrap
-
 
 -Wire up the app (excluding database);
 	-Folder Architecture
@@ -37,3 +25,8 @@ packag.json
  	-Make sure things are getting from the DOM to the FS files
  	-Make sure things are getting from the FS files to the DOM
  	-Build out the Angular
+
+QUESTIONS
+- NODEMON
+- EXPRESS ARCHITECTURE
+	-MODEL, CONTROLLER, ROUTES
