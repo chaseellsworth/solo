@@ -1,4 +1,8 @@
-Angular.Module('travel-filter', []) ////ADD IN CONTROLLER WHEN FINISHED
+angular.module('travel-filter', [
+'travel-filter.auth', 
+'travel-filter.photos', 
+'travel-filter.services'
+]) ////ADD IN CONTROLLER WHEN FINISHED
 
 .config(function($routeProvider, $httpProvider, loadingProvider){
 	loadingProvider

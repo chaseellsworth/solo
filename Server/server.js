@@ -1,12 +1,14 @@
 var express = require('express');
-var bodyParser = require('body-parser');
-var http = require('http');
-
 var app = express();
+var bodyParser = require('body-parser');
+// var db = require(./db);
+var http = require('http');
+var path = require('path');
+var dir = path.resolve(__dirname + '/../client')
 
-app.get('/', function (req, res) {
-  res.send('Hello World!')
-})
+
+
+app.use(express.static(dir));
 
 var server = app.listen(3000, function(){
 	
