@@ -4,7 +4,7 @@ angular.module("travel-filter", [])
 
 directive('image', function($q) {
     
-    'use strict'
+    'use strict'	
 
     var URL = window.URL || window.webkitURL;
 
