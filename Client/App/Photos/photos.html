@@ -26,14 +26,13 @@
 
 	</form>
 
-	<div ng-repeat="photo in data" ng-controller="PhotosController">
+	<div ng-repeat="photo in data">
 		
-		{{data.location}} - {{data.activity}}
-		
+		{{photo.location}} - {{photo.activity}}
 		<br/> 
-		
-		{{data.description}}
-		<img ng-src="{{photo.images[0]}}">	
+		{{photo.description}}
+		{{photo.image}}
+		<!-- <img ng-src="{{photo.image}}">	 -->
 	</div>
 
 </div>
