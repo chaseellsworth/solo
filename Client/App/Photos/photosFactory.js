@@ -1,6 +1,5 @@
 angular.module('TravelFilter.PhotosFactory', [])
 
-
 .factory('PhotosFactory', ['$http', '$base64', function ($http, $base64){
 
 	var addPhoto = function(location, activity, description, image){
@@ -23,6 +22,7 @@ angular.module('TravelFilter.PhotosFactory', [])
     	})
     	.then(function (resp) {
       		return resp.data.token;
+      		console.log(resp.data.token);
     	});
 
 	};
@@ -34,6 +34,8 @@ angular.module('TravelFilter.PhotosFactory', [])
       		url: '/api/photos'
     	})
       	.then(function(results) {
+      		console.log(results);
+      		console.log(results.data);
         	return results.data;
       	})
       	.catch(function(error) {

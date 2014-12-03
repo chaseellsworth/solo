@@ -9,15 +9,19 @@ var Q = require('q');
   
 module.exports = {
 
-  //ADD THE PATHS TO STORE THE STUFF AND GET THE STUFF
-
-  //ADD FS WRITEFILE FUNCTION TO CREATE NEW FS FILE WITH POST SAVED AS OBJECT OR APPEND EXISTING FILE
   addPhoto: function(req, res, next){
     
+    //what is .create??
+    //would normally use .save instead of .create 
+
     photoModel.create(req.body, function(error, data){
+    // photoModel.create(req.body, function(error, data){
+      console.log(req.body);
       if (error) {
+        console.log('error')
         res.send(500);
-      }else{
+      } else {
+        console.log('success')
         res.send(data);
       }
     })
@@ -25,9 +29,11 @@ module.exports = {
 
   getPhotos: function(req, res, next){
     photoModel.find( function(error, data){
+    // photoModel.find( function(error, data){
+      console.log(data);
       if (error) {
         res.send(500);
-      }else{
+      } else {
         res.send(data);
       }
     })

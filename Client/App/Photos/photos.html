@@ -2,7 +2,7 @@
 <!-- Do i need to add the controller or not? -->
 <div ng-controller='PhotosController'> 
 	
-	hello {{chase}}
+	<p>hello {{chase}}</p>
 	
 	<!-- toggles form for uploading images -->
 	<button ng-click="showPostForm = !showPostForm">Add Post</button>
@@ -29,14 +29,12 @@
 
 <!-- repeats posted images -->
 <!-- how do i get it to do a GET request automatically whenever it comes to this page?? -->
-<div ng-repeat="photo in photos" ng-controller="PhotosController">
-	{{post.author}} - {{post.location}}
+<div ng-repeat="photo in data.photos" ng-controller="PhotosController">
+	{{data.photos.location}} - {{data.photos.activity}}
 	<br/> 
-	{{post.activity}}
-	<img ng-src="{{post.images[0]}}" class="post-image">
-	<img ng-src="{{post.images[1]}}" class="post-image">
-	<img ng-src="{{post.images[2]}}" class="post-image">
-	<img ng-src="{{post.images[3]}}" class="post-image">
+	{{data.photos.description}}
+	<img ng-src="{{photo.images[0]}}">
+	
 </div>
 
 

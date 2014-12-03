@@ -4,8 +4,11 @@ angular.module('TravelFilter.PhotosController', [])
 	
 	//GET PHOTOS
 	$scope.data = {};
+	console.log("0" +$scope.data);
 	
 	var results = PhotosFactory.getPhotos();
+		console.log("1" + results);
+		console.log("2" +results.data);
 		$scope.data.photos = results;
 
 
