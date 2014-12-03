@@ -9,7 +9,11 @@ angular.module('TravelFilter.PhotosController', [])
 	
 	PhotosFactory.getPhotos().then(function(results){
 		$scope.data = results;
-		var newImage = $base64.decode($scope.data.image);
+		// console.log($scope.data);
+		// console.log($base64.encode("DSCN0096.JPG"));
+		// console.log($base64.decode($scope.data[0].image));
+		var currentImage = $scope.data.image;
+		var newImage = $base64.decode(currentImage);
 		$scope.data.image = newImage;
 	});
 				// console.log(results);
@@ -28,15 +32,17 @@ angular.module('TravelFilter.PhotosController', [])
 	$scope.getPhotos = function(){
 		PhotosFactory.getPhotos().then(function(results){
 			$scope.data = results;
-			var image = $base64.decode($scope.data.image);
-			$scope.data.image = image;
+			var currentImage = $scope.data.image;
+			var newImage = $base64.decode(currentImage);
+			$scope.data.image = newImage;
 		});	
 	};
 
 	//ADD PHOTOS
-	$scope.post = {};
-	$scope.addPhoto = function(){
-		PhotosFactory.addPhoto($scope.post.location, $scope.post.activity, $scope.post.description, $scope.post.imageData );
+	// $scope.post = {};
+	$scope.addPhoto = function(image){
+		
+		PhotosFactory.addPhoto($scope.post.location, $scope.post.activity, $scope.post.description, image );
 	
 	};
 

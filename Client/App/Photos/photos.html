@@ -7,20 +7,22 @@
 	<!-- toggles form for uploading images -->
 	<button ng-click="showPostForm = !showPostForm">Add Post</button>
 
-	<form ng-show="showPostForm" ng-submit="addPhoto()"> 
+	<form ng-show="showPostForm" ng-submit="addPhoto(images)"> 
 		
-		<input placeholder="Location" ng-model="post.location" class="form-control" required/>
+		<input placeholder="Location" ng-model="post.location" class="form-control"/>
 		
-		<input placeholder="Activity" ng-model="post.activity" class="form-control" required/>
+		<input placeholder="Activity" ng-model="post.activity" class="form-control"/>
 		
 		<textarea placeholder="Describe your experience" ng-model="post.description" class="form-control" rows="10"></textarea>
 		
 		<!-- pulls up options to upload -->
 		
-		<input type="file" accept="image/*" multiple  image="images" resize-max-height="1000" resize-max-width="250" resize-quality="1" ng-model='post.imageData' required/ >
 		
+		<input type="file" accept="image/*" multiple  image="images" resize-max-height="1000" resize-max-width="250" resize-quality="1" />
+		<!-- base-sixty-four-input -->
 		<!-- Originals <img ng-repeat="img in images" ng-src="{{img.url}}" type="{{img.file.type}}" /> -->
-			Resized <img ng-repeat="img in images" ng-src="{{img.resized.dataURL}}"/>
+			Resized 
+		<img ng-repeat="img in images" ng-src="{{img.resized.dataURL}}"/>
 		
 		<button type="submit">Save Post</button>
 
@@ -31,8 +33,8 @@
 		{{photo.location}} - {{photo.activity}}
 		<br/> 
 		{{photo.description}}
-		{{photo.image}}
-		<!-- <img ng-src="{{photo.image}}">	 -->
+		<!-- {{photo.image}} -->
+		<img class="travel-photos" ng-src="{{photo.image}}">	
 	</div>
 
 </div>

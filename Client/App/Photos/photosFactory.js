@@ -4,13 +4,18 @@ angular.module('TravelFilter.PhotosFactory', [])
 
 	var addPhoto = function(location, activity, description, image){
 		
-		var encoded = $base64.encode(image);
+		var imageArray = [];
+		for(var i = 0; i < image.length; i++){
+			imageArray.push(image[i].resized.dataUrl);
+		}
+		console.log(imageArray);
+		// var encoded = $base64.encode(image);
 		
 		var postData = {
 			location: location,
 			activity: activity,
 			description: description,
-			image: encoded
+			image: imageArray
 		}
 
 		console.log(postData);
