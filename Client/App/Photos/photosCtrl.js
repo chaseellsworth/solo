@@ -1,13 +1,17 @@
-angular.module('TravelFilter.photos', [])
+angular.module('TravelFilter.PhotosController', [])
 
-.controller('PhotosController', function ($base64, $scope, $location, Photos, $http){
+.controller('PhotosController', [ '$base64', '$scope', '$location', 'PhotosFactory', '$http', function ($base64, $scope, $location, PhotosFactory, $http){
 	
 	//GET PHOTOS
 	$scope.data = {};
 	
+	var results = PhotosFactory.getPhotos();
+		$scope.data.photos = results;
+
+
 	$scope.getPhotos = function(){
-	
-		Photos.getPhotos();
+		var results = PhotosFactory.getPhotos();
+		$scope.data.photos = results;
 	
 	};
 
@@ -16,11 +20,11 @@ angular.module('TravelFilter.photos', [])
 	
 	$scope.addPhoto = function(){
 	
-		Photos.addPhoto($scope.post.location, $scope.post.activity, $scope.post.description, $scope.post.imageData );
+		PhotosFactory.addPhoto($scope.post.location, $scope.post.activity, $scope.post.description, $scope.post.imageData );
 	
 	};
 
-});
+}]);
 
 //using base64
 // $scope.encoded = $base64.encode(???);

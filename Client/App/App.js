@@ -1,56 +1,45 @@
 angular.module('TravelFilter', [
 'ui.router',
 'base64',
-'TravelFilter.auth', 
-'TravelFilter.photos',
-'TravelFilter.photosFactory'
-]) ////ADD IN CONTROLLER WHEN FINISHED
+'TravelFilter.PhotosFactory',
+'TravelFilter.PhotosController'
+])
 
-.config(function($stateProvider, $urlRouterProvider,$httpProvider){    //, loadingProvider
-	// loadingProvider
-	// 	.load({
-	// 		transitionSpeed: '.3s', //default
- //      		class: 'spinner', //default is the 'load-bar-inbox' class, another option is the 'spinner' class
- //        	overlay: {
- //          		display: true, //required to apply an overlay
- //          		color: '#FF0000', //default
- //          		// opacity: .3 //default
- //        	}
-	// 	})
-
+.config(function($stateProvider, $urlRouterProvider){   
+  
   $urlRouterProvider.otherwise('/signin');
 
-	$stateProvider
-		.state('signin', {
-      url: '/signin',
-      templateUrl: 'app/auth/signin.html',
-      // controller: function($scope){
-      //   $scope.items = [];
-      // }
-    })
-    
-    .state('signup', {
-			url: '/signup',
-      templateUrl: 'app/auth/signup.html',
-			// controller: controller: function($scope){
-    //      $scope.items = [];
-    //    }
-		})
-		
+  $stateProvider
     .state('photos', {
       url: '/photos',
 			templateUrl: 'app/photos/photos.html',
-			// controller:  controller: function($scope){
-    //      $scope.items = [];
-    //    }
+			controller:  'PhotosController'
 		})
-
+    // .state('signin', {
+    //   url: '/signin',
+    //   templateUrl: 'app/auth/signin.html',
+    //   controller: 'TravelFilter.auth'
+    // })
+    
+    // .state('signup', {
+    //   url: '/signup',
+    //   templateUrl: 'app/auth/signup.html',
+    //   controller: 'TravelFilter.auth'
+    // })
+    
 });
 
-
-
-
-
+ //, loadingProvider
+  // loadingProvider
+  //  .load({
+  //    transitionSpeed: '.3s', //default
+  //          class: 'spinner', //default is the 'load-bar-inbox' class, another option is the 'spinner' class
+  //          overlay: {
+  //              display: true, //required to apply an overlay
+  //              color: '#FF0000', //default
+  //              // opacity: .3 //default
+   //         }
+  //  })
 
 
 		// $httpProvider.interceptors.push('AttachTokens');

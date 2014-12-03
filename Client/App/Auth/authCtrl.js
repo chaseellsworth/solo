@@ -1,11 +1,9 @@
-;(function(){
-	angular.module('TravelFilter.auth', [])
 
-	.controller('AuthController', AuthController)
+angular.module('TravelFilter.auth', [])
 
-	function AuthController( ){
+	.controller('AuthController', [ function AuthController( ){
 
-	};
+	}]);
 
-}).call(this);
+
 

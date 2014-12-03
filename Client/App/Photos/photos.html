@@ -28,7 +28,8 @@
 </div>
 
 <!-- repeats posted images -->
-<div ng-repeat="post in posts">
+<!-- how do i get it to do a GET request automatically whenever it comes to this page?? -->
+<div ng-repeat="photo in photos" ng-controller="PhotosController">
 	{{post.author}} - {{post.location}}
 	<br/> 
 	{{post.activity}}

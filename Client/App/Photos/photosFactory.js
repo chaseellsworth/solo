@@ -1,7 +1,7 @@
-angular.module('TravelFilter.photosFactory', [])
+angular.module('TravelFilter.PhotosFactory', [])
 
 
-.factory('Photos', function ($http, $base64){
+.factory('PhotosFactory', ['$http', '$base64', function ($http, $base64){
 
 	var addPhoto = function(location, activity, description, image){
 		
@@ -25,13 +25,13 @@ angular.module('TravelFilter.photosFactory', [])
       		return resp.data.token;
     	});
 
-	}
+	};
 
-	var getPhotos = function(location, activity, description, image){
+	var getPhotos = function(){
 		
 		return $http({
       		method: 'GET',
-      		url: '/api/links'
+      		url: '/api/photos'
     	})
       	.then(function(results) {
         	return results.data;
@@ -43,9 +43,9 @@ angular.module('TravelFilter.photosFactory', [])
 	}
 
 	return {
-		addPhoto: addPhoto
-		getPhoto: getPhotos
+		addPhoto: addPhoto,
+		getPhotos: getPhotos
 	};
 
-});
+}]);
 
