@@ -3,18 +3,34 @@ angular.module('TravelFilter.PhotosController', [])
 .controller('PhotosController', [ '$base64', '$scope', '$location', 'PhotosFactory', '$http', function ($base64, $scope, $location, PhotosFactory, $http){
 	
 	//GET PHOTOS
-	$scope.data = {};
-	console.log("0" +$scope.data);
+	$scope.name = "chase";
 	
-	var results = PhotosFactory.getPhotos();
-		console.log("1" + results);
-		console.log("2" +results.data);
-		$scope.data.photos = results;
+	$scope.data = {};
+	
+	PhotosFactory.getPhotos().then(function(results){
+		$scope.data = results;
+				console.log($scope.data);
+	});
+				// console.log(results);
+				// console.log(angular.fromJson(results));
+		// $scope.data.photos = results;
+		// var image = $base64.decode($scope.data.photos.image);
+		// $scope.data.photos.image = image;
 
+	// var results = PhotosFactory.getPhotos();
+	// 			console.log("1" + results);
+	// 			console.log("2" +results.data);
+	// 	$scope.data.photos = results;
+	// 	var image = $base64.decode($scope.data.photos.image);
+	// 	$scope.data.photos.image = image;
 
 	$scope.getPhotos = function(){
-		var results = PhotosFactory.getPhotos();
-		$scope.data.photos = results;
+		PhotosFactory.getPhotos().then(function(results){
+		$scope.data = results;
+		// var results = PhotosFactory.getPhotos();
+		// $scope.data = results;
+		var image = $base64.decode($scope.data.image);
+		$scope.data.image = image;
 	
 	};
 

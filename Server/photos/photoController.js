@@ -30,10 +30,10 @@ module.exports = {
   getPhotos: function(req, res, next){
     photoModel.find( function(error, data){
     // photoModel.find( function(error, data){
-      console.log(data);
       if (error) {
         res.send(500);
       } else {
+        console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" + data);
         res.send(data);
       }
     })

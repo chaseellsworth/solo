@@ -34,8 +34,8 @@ angular.module('TravelFilter.PhotosFactory', [])
       		url: '/api/photos'
     	})
       	.then(function(results) {
-      		console.log(results);
-      		console.log(results.data);
+      		// console.log(results);
+      		// console.log(results.data);
         	return results.data;
       	})
       	.catch(function(error) {
