@@ -16,6 +16,7 @@ module.exports = {
 
     photoModel.create(req.body, function(error, data){
     // photoModel.create(req.body, function(error, data){
+      console.log('!!!!!!!!!!!!!!!!!!!!!!!!');
       console.log(req.body);
       if (error) {
         console.log('error')

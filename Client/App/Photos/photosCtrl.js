@@ -9,13 +9,36 @@ angular.module('TravelFilter.PhotosController', [])
 	
 	PhotosFactory.getPhotos().then(function(results){
 		$scope.data = results;
-		// console.log($scope.data);
-		// console.log($base64.encode("DSCN0096.JPG"));
-		// console.log($base64.decode($scope.data[0].image));
 		var currentImage = $scope.data.image;
 		var newImage = $base64.decode(currentImage);
 		$scope.data.image = newImage;
 	});
+
+	$scope.getPhotos = function(){
+		PhotosFactory.getPhotos().then(function(results){
+			$scope.data = results;
+			var currentImage = $scope.data.image;
+			var newImage = $base64.decode(currentImage);
+			$scope.data.image = newImage;
+		});	
+	};
+
+	//ADD PHOTOS
+	$scope.addPhoto = function(){
+		
+		PhotosFactory.addPhoto($scope.post.location, $scope.post.activity, $scope.post.description, $scope.data.image );
+	
+	};
+
+}]);
+	// $scope.post = {};
+
+//using base64
+// $scope.encoded = $base64.encode(???);
+// $scope.decoded = $base64.decode(???);
+		// console.log($scope.data);
+		// console.log($base64.encode("DSCN0096.JPG"));
+		// console.log($base64.decode($scope.data[0].image));
 				// console.log(results);
 				// console.log(angular.fromJson(results));
 		// $scope.data.photos = results;
@@ -28,26 +51,3 @@ angular.module('TravelFilter.PhotosController', [])
 	// 	$scope.data.photos = results;
 	// 	var image = $base64.decode($scope.data.photos.image);
 	// 	$scope.data.photos.image = image;
-
-	$scope.getPhotos = function(){
-		PhotosFactory.getPhotos().then(function(results){
-			$scope.data = results;
-			var currentImage = $scope.data.image;
-			var newImage = $base64.decode(currentImage);
-			$scope.data.image = newImage;
-		});	
-	};
-
-	//ADD PHOTOS
-	// $scope.post = {};
-	$scope.addPhoto = function(image){
-		
-		PhotosFactory.addPhoto($scope.post.location, $scope.post.activity, $scope.post.description, image );
-	
-	};
-
-}]);
-
-//using base64
-// $scope.encoded = $base64.encode(???);
-// $scope.decoded = $base64.decode(???);

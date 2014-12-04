@@ -4,20 +4,15 @@ angular.module('TravelFilter.PhotosFactory', [])
 
 	var addPhoto = function(location, activity, description, image){
 		
-		var imageArray = [];
-		for(var i = 0; i < image.length; i++){
-			imageArray.push(image[i].resized.dataUrl);
-		}
-		console.log(imageArray);
-		// var encoded = $base64.encode(image);
+		var encoded = $base64.encode(image);
 		
 		var postData = {
 			location: location,
 			activity: activity,
 			description: description,
-			image: imageArray
+			image: encoded
 		}
-
+		console.log('@@@@@@@@@@@@@@@@@@@');
 		console.log(postData);
 		
 		return $http({
@@ -33,14 +28,16 @@ angular.module('TravelFilter.PhotosFactory', [])
 	};
 
 	var getPhotos = function(){
-		
+		console.log('$$$$$$$$$$$$$$$$$$$$$$$');
+
 		return $http({
       		method: 'GET',
       		url: '/api/photos'
     	})
       	.then(function(results) {
       		// console.log(results);
-      		// console.log(results.data);
+      		console.log('^^^^^^^^^^^^^^^^');
+      		console.log(results.data);
         	return results.data;
       	})
       	.catch(function(error) {
