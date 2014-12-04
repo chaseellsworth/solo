@@ -2,7 +2,7 @@
 <div ng-controller='PhotosController'> 
 	
 	<p>hello {{name}}</p>
-	
+	<!-- STILL NEED TO ADD THE DIRECTIVE!!!! AND FINISH THE HTML??? -->
 	<!-- toggles form for uploading images -->
 	<button ng-click="showPostForm = !showPostForm">Add Post</button>
 
@@ -10,13 +10,15 @@
 		<input placeholder="Location" ng-model="post.location" class="form-control"/>
 		<input placeholder="Activity" ng-model="post.activity" class="form-control"/>
 		<textarea placeholder="Describe your experience" ng-model="post.description" class="form-control" rows="10"></textarea>
-		<!-- pulls up options to upload -->
-		<input type="file" accept="image/*" multiple  image="images" resize-max-height="1000" resize-max-width="250" resize-quality="1" />
-		<!-- base-sixty-four-input -->
-		<!-- Originals <img ng-repeat="img in images" ng-src="{{img.url}}" type="{{img.file.type}}" /> -->
-			Resized 
-		<img ng-repeat="img in images" ng-src="{{img.resized.dataURL}}"/>
 		
+		<!-- pulls up options to upload -->
+		<!-- <input type="file" accept="image/*" multiple  image="images" resize-max-height="1000" resize-max-width="250" resize-quality="1" />
+			Resized 
+		<img ng-repeat="img in images" ng-src="{{img.resized.dataURL}}"/> -->
+		
+		<!-- CAN I ADD A SEPARATE CONTROLLER IN HERE??? -->
+		<input type="file" ng-file-select ng-model="myFiles" name="file" accept="image/*" ng-file-change="fileSelected($files, $event)" multiple="true"  resetOnClick="true" >
+
 		<button type="submit">Save Post</button>
 
 	</form>
@@ -30,6 +32,8 @@
 	</div>
 
 </div>
+		<!-- base-sixty-four-input -->
+		<!-- Originals <img ng-repeat="img in images" ng-src="{{img.url}}" type="{{img.file.type}}" /> -->
 
 <!-- repeats posted images -->
 <!-- how do i get it to do a GET request automatically whenever it comes to this page?? -->

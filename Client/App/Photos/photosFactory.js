@@ -36,7 +36,7 @@ angular.module('TravelFilter.PhotosFactory', [])
     	})
       	.then(function(results) {
       		// console.log(results);
-      		console.log('^^^^^^^^^^^^^^^^');
+      		console.log('$$$$$$$$$$$$$$$$$$$$$$$');
       		console.log(results.data);
         	return results.data;
       	})

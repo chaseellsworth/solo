@@ -1,7 +1,8 @@
 angular.module('TravelFilter.PhotosController', [])
 
 .controller('PhotosController', [ '$base64', '$scope', '$location', 'PhotosFactory', '$http', function ($base64, $scope, $location, PhotosFactory, $http){
-	
+	// ADD CODE FROM ANGULAR-FILE-UPLOAD TO GRAB FILES AND MAYBE CONVERT THEM HERE OR ADD A WHOLE NEW CONTROLLER OR DIRECTIVE
+
 	//GET PHOTOS
 	$scope.name = "chase";
 	

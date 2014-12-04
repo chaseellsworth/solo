@@ -1,6 +1,7 @@
 angular.module('TravelFilter', [
 'ui.router',
 'base64',
+'angularFileUpload',
 'TravelFilter.PhotosFactory',
 'TravelFilter.PhotosController'
 ])
