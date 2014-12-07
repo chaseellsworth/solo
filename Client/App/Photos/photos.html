@@ -17,7 +17,7 @@
 		<img ng-repeat="img in images" ng-src="{{img.resized.dataURL}}"/> -->
 		
 		<!-- CAN I ADD A SEPARATE CONTROLLER IN HERE??? -->
-		<input type="file" ng-file-select ng-model="myFiles" name="file" accept="image/*" ng-file-change="fileSelected($files, $event)" multiple="true"  resetOnClick="true" >
+		<input type="file" ng-file-select ng-model="files" name="file" accept="image/*" ng-file-change="fileSelected($files, $event)" multiple="true"  resetOnClick="true" >
 
 		<button type="submit">Save Post</button>
 

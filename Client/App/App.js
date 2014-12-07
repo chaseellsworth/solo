@@ -1,3 +1,4 @@
+
 angular.module('TravelFilter', [
 'ui.router',
 'base64',
@@ -13,7 +14,7 @@ angular.module('TravelFilter', [
   $stateProvider
     .state('photos', {
       url: '/photos',
-			templateUrl: 'app/photos/photos.html',
+			templateUrl: 'app/Photos/photos.html',
 			controller:  'PhotosController'
 		})
     // .state('signin', {
