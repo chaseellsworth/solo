@@ -5,11 +5,11 @@ angular.module('TravelFilter.PhotosController', [])
 	  $scope.$watch('files', function() {
 	    for (var i = 0; i < $scope.files.length; i++) {
 	      var file = $scope.files[i];
-	      console.log(file);
+	      console.log($scope.myModelObj);
 
 	      $scope.upload = $upload.upload({
-	        url: 'server/upload/url', // upload.php script, node.js route, or servlet url
-	        //method: 'POST' or 'PUT',
+	        url: 'api/photos', // upload.php script, node.js route, or servlet url
+	        method: 'POST',
 	        //headers: {'Authorization': 'xxx'}, // only for html5
 	        //withCredentials: true,
 	        data: {myObj: $scope.myModelObj},
