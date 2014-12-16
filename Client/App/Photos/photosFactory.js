@@ -1,31 +1,6 @@
 angular.module('TravelFilter.PhotosFactory', [])
 
-.factory('PhotosFactory', ['$http', '$base64', function ($http, $base64){
-
-	var addPhoto = function(location, activity, description, image){
-		
-		var encoded = $base64.encode(image);
-		
-		var postData = {
-			location: location,
-			activity: activity,
-			description: description,
-			image: encoded
-		}
-		console.log('@@@@@@@@@@@@@@@@@@@');
-		console.log(postData);
-		
-		return $http({
-      		method: 'POST',
-      		url: '/api/photos',
-      		data: postData
-    	})
-    	.then(function (resp) {
-      		return resp.data.token;
-      		console.log(resp.data.token);
-    	});
-
-	};
+.factory('PhotosFactory', ['$http', function ($http){
 
 	var getPhotos = function(){
 		console.log('$$$$$$$$$$$$$$$$$$$$$$$');
@@ -47,7 +22,6 @@ angular.module('TravelFilter.PhotosFactory', [])
 	}
 
 	return {
-		addPhoto: addPhoto,
 		getPhotos: getPhotos
 	};
 

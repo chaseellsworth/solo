@@ -10,7 +10,7 @@ angular.module('TravelFilter.PhotosController', [])
 	
 	$scope.onFileSelect = function(files){
 	    
-    console.log($scope.title + Auth.currentUser);
+    // console.log($scope.title + Auth.currentUser);
     for(var i = 0; i < files.length; i++){
       var file = files[i];
                               console.log(file);
@@ -18,8 +18,8 @@ angular.module('TravelFilter.PhotosController', [])
         method: 'POST',
         url:  'api/photos/',
         data: {
-          prompt_id: $scope.imageId,
-          user_id:   Auth.currentUser      
+          prompt_id: "test",										//$scope.imageId,
+          user_id:   "test"											//Auth.currentUser      
         },
         file: file
       })
@@ -28,10 +28,10 @@ angular.module('TravelFilter.PhotosController', [])
         console.log('percent: ' + parseInt(100.0 * evt.loaded / evt.total))
       })
       .success(function(data, status, headers, config){
-        Edit.imageId.push(data);
-        $scope.imageNamesToDisplay = Edit.imageId;
-        console.log($scope.imageNamesToDisplay);
-        console.log("Edit.imageId is: ", Edit.imageId);
+        // Edit.imageId.push(data);
+        // $scope.imageNamesToDisplay = Edit.imageId;
+        // console.log($scope.imageNamesToDisplay);
+        // console.log("Edit.imageId is: ", Edit.imageId);
                               console.log(status);
                               console.log(headers);
                               console.log(config);
@@ -42,6 +42,9 @@ angular.module('TravelFilter.PhotosController', [])
       })
     }
 	}
+
+	//ADD POST
+	$scope.addPost	
 
 	//GET PHOTOS
 	$scope.name = "chase";
@@ -63,32 +66,6 @@ angular.module('TravelFilter.PhotosController', [])
 			$scope.data.image = newImage;
 		});	
 	};
+}])
 
-	//ADD PHOTOS
-	$scope.addPhoto = function(){
-		
-		PhotosFactory.addPhoto($scope.post.location, $scope.post.activity, $scope.post.description, $scope.data.image );
 	
-	};
-
-}]);
-	// $scope.post = {};
-
-//using base64
-// $scope.encoded = $base64.encode(???);
-// $scope.decoded = $base64.decode(???);
-		// console.log($scope.data);
-		// console.log($base64.encode("DSCN0096.JPG"));
-		// console.log($base64.decode($scope.data[0].image));
-				// console.log(results);
-				// console.log(angular.fromJson(results));
-		// $scope.data.photos = results;
-		// var image = $base64.decode($scope.data.photos.image);
-		// $scope.data.photos.image = image;
-
-	// var results = PhotosFactory.getPhotos();
-	// 			console.log("1" + results);
-	// 			console.log("2" +results.data);
-	// 	$scope.data.photos = results;
-	// 	var image = $base64.decode($scope.data.photos.image);
-	// 	$scope.data.photos.image = image;
