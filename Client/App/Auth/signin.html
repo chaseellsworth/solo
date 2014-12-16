@@ -1,10 +1,11 @@
-<div id='signin'>
+<div id='signin' ng-controller="AuthController">
+  
   <h1>signin</h1>
-  <form name="signinForm" ng-submit='signin()'>
+  
+  <form name="signinForm" ng-submit="setCurrentUser(userLoginInput)">
 
-    <input name='userName' type='text' ng-model='user.username' placeholder='enter username' ng-minlength='8' ng-maxlength='15'>
-
-    <input name='passWord' type="password" ng-model='user.password' placeholder='enter password' ng-minlength='8' ng-maxlength='15'>
+    <input type='text' ng-model='userLoginInput' placeholder='enter username'>
+    <!-- <input name='passWord' type="password" ng-model='user.password' placeholder='enter password' ng-minlength='8' ng-maxlength='15'> -->
 
     <button>signin</button>
   </form>

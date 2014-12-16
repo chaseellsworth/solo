@@ -1,6 +1,6 @@
-angular.module('TravelFilter.PhotosFactory', [])
+angular.module('TravelFilter.photosFactory', [])
 
-.factory('PhotosFactory', ['$http', function ($http){
+.factory('photosFactory', ['$http', function ($http){
 
 	var getPhotos = function(){
 		console.log('$$$$$$$$$$$$$$$$$$$$$$$');

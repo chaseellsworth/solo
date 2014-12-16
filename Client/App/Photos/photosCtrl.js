@@ -1,6 +1,6 @@
 angular.module('TravelFilter.PhotosController', [])
 
-.controller('PhotosController', [ '$base64', '$scope', '$location', 'PhotosFactory', '$http', '$upload', function ($base64, $scope, $location, PhotosFactory, $http, $upload){
+.controller('PhotosController', ['$scope', '$location', 'photosFactory', '$http', '$upload',  function ($scope, $location, photosFactory, $http, $upload){
 	$scope.imageUploads = [];
 	$scope.abort = function(index){
 		$scope.upload[index].abort();
@@ -28,6 +28,7 @@ angular.module('TravelFilter.PhotosController', [])
         console.log('percent: ' + parseInt(100.0 * evt.loaded / evt.total))
       })
       .success(function(data, status, headers, config){
+        console.log(data);
         // Edit.imageId.push(data);
         // $scope.imageNamesToDisplay = Edit.imageId;
         // console.log($scope.imageNamesToDisplay);
@@ -51,21 +52,21 @@ angular.module('TravelFilter.PhotosController', [])
 	
 	$scope.data = {};
 	
-	PhotosFactory.getPhotos().then(function(results){
+	photosFactory.getPhotos()
+  .then(function(results){
 		$scope.data = results;
 		var currentImage = $scope.data.image;
-		var newImage = $base64.decode(currentImage);
-		$scope.data.image = newImage;
 	});
 
-	$scope.getPhotos = function(){
-		PhotosFactory.getPhotos().then(function(results){
-			$scope.data = results;
-			var currentImage = $scope.data.image;
-			var newImage = $base64.decode(currentImage);
-			$scope.data.image = newImage;
-		});	
-	};
+	// $scope.getPhotos = function(){
+	// 	photosFactory.getPhotos().then(function(results){
+	// 		$scope.data = results;
+	// 		var currentImage = $scope.data.image;
+	// 		var newImage = $base64.decode(currentImage);
+	// 		$scope.data.image = newImage;
+	// 	});	
+	// };
+
 }])
 
 	
