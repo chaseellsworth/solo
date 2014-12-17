@@ -16,7 +16,9 @@ app.use(bodyParser.json());
 //morgan logs all the requests
 app.use(morgan('dev'));
 app.use(express.static(dir));
-app.use('/api/photos', photoRouter);		
+app.use('/api/photos', photoRouter);    
+console.log('dirname', __dirname);
+app.use(express.static(__dirname + '/photos/archives/'));
 
 var server = app.listen(3000, function(){
 	
