@@ -2,7 +2,7 @@ angular.module('TravelFilter.authFactory', [])
 
   .factory('authFactory', [ '$state', function($state){
     
-    var currentUser = '';
+    var currentUser = 'door';
     
     var setCurrentUser = function(name){
       this.currentUser = name;

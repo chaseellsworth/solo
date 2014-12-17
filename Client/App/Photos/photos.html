@@ -1,27 +1,30 @@
 
-<div ng-controller='PhotosController'> 
+<div ng-controller='PhotosController' ng-init="getPhotos()"> 
 	
-	<p>hello {{name}}</p>
+	<p>hello {{authFactory.currentUser}}</p>
 	
 	<button ng-click="showPostForm = !showPostForm">Add Post</button>
 
-	<form ng-show="showPostForm" ng-submit="addPhoto()"> 
-		<input placeholder="Location" ng-model="post.location" class="form-control"/>
-		<input placeholder="Activity" ng-model="post.activity" class="form-control"/>
-		<textarea placeholder="Describe your experience" ng-model="post.description" class="form-control" rows="10"></textarea>
+	<form ng-show="showPostForm"> 
+		<input placeholder="Location" ng-model="location" class="form-control"/>
+		<input placeholder="Activity" ng-model="activity" class="form-control"/>
+		<textarea placeholder="Describe your experience" ng-model="description" class="form-control" rows="10"></textarea>
 		
 		<input type="submit" ng-model="files" ng-file-select="onFileSelect(files)" ng-multiple="true" value="Upload Photo">
 
-		<button type="submit">Save Post</button>
+		<button ng-click="addPhotos(location, activity, description)">Save Post</button>
 
 	</form>
 
-	<div ng-repeat="photo in data">
-		{{photo.location}} - {{photo.activity}}
+	<div ng-repeat="post in posts">
+		{{post.location}} - {{post.activity}}
 		<br/> 
-		{{photo.description}}
+		{{post.description}}
 		<!-- {{photo.image}} -->
-		<img class="travel-photos" ng-src="{{photo.image}}">	
+		<div ng-show="post.imagePaths" >	
+			<img class="travel-photos" ng-src="{{post.imagePaths}}"/>	
+		</div>
+				<!-- <img class="travel-photos" ng-src="3e0b39c6-a257-4a23-a33b-f853bef90d69.JPG ">	 -->
 	</div>
 
 </div>

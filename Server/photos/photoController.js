@@ -2,9 +2,7 @@ var photoModel = require('./photoModel.js');
 var express = require('express');
 var multiparty = require('multiparty');
 var Promise = require('bluebird');
-// var Q = require('q');
 var fs = Promise.promisifyAll(require('fs'));
-// var moment = require('moment');
 var path = require('path');
 var lodash = require('lodash');
 var uuid = require('node-uuid');
@@ -52,6 +50,19 @@ module.exports = {
 
     form.parse(req);
 
+  },
+
+  addPhotos: function(req, res){
+    
+    console.log(req.body);
+    
+    var newPost = new photoModel(req.body);
+    
+    newPost.save(function(err){
+      console.log(err);
+    });
+    
+    res.status(200).send('success');
   },
 
   getPhotos: function(req, res, next){

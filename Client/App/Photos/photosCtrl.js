@@ -1,12 +1,17 @@
 angular.module('TravelFilter.PhotosController', [])
 
-.controller('PhotosController', ['$scope', '$location', 'photosFactory', '$http', '$upload',  function ($scope, $location, photosFactory, $http, $upload){
-	$scope.imageUploads = [];
+.controller('PhotosController', ['$scope', '$location', 'photosFactory', 'authFactory' ,'$http', '$upload',  function ($scope, $location, photosFactory, authFactory, $http, $upload){
+	
+  $scope.imageUploads = [];
 	$scope.abort = function(index){
 		$scope.upload[index].abort();
 		$scope.upload[index] = null;
 	};
 
+
+  $scope.photosFactory = photosFactory;
+  $scope.authFactory = authFactory;
+  console.log($scope.authFactory.currentUser);
 	
 	$scope.onFileSelect = function(files){
 	    
@@ -29,6 +34,8 @@ angular.module('TravelFilter.PhotosController', [])
       })
       .success(function(data, status, headers, config){
         console.log(data);
+        $scope.photosFactory.imagePaths.push(data);
+        console.log($scope.photosFactory.imagePaths);
         // Edit.imageId.push(data);
         // $scope.imageNamesToDisplay = Edit.imageId;
         // console.log($scope.imageNamesToDisplay);
@@ -45,18 +52,26 @@ angular.module('TravelFilter.PhotosController', [])
 	}
 
 	//ADD POST
-	$scope.addPost	
+  $scope.addPhotos = function(location, activity, description){
 
+    photosFactory.addPhotos(location, activity, description, $scope.authFactory.currentUser, $scope.photosFactory.imagePaths);
+
+  }
 	//GET PHOTOS
-	$scope.name = "chase";
+	$scope.post = {};
 	
-	$scope.data = {};
-	
-	photosFactory.getPhotos()
-  .then(function(results){
-		$scope.data = results;
-		var currentImage = $scope.data.image;
-	});
+	$scope.getPhotos = function(){
+    photosFactory.getPhotos()
+    .then(function(results){
+      console.log(results);
+      results.forEach(function(post){
+        if(post.imagePaths){
+            post.imagePaths.split(',');
+          }
+        });
+      $scope.posts = results;
+	  });
+  };
 
 	// $scope.getPhotos = function(){
 	// 	photosFactory.getPhotos().then(function(results){
